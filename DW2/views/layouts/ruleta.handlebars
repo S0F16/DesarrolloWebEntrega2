@@ -24,7 +24,29 @@
             <div class="table" id="tablaRuleta"></div>
             <div class="controls">
             <button id="clear-btn">Limpiar apuestas</button>
-           
+                 <div class="outside-bets" id="outsideBets">
+                
+                <!-- Seccion para docenas y columnas -->
+                <div class="dozens-columns-group">
+                    <div class="cell bet-dozen" data-bet="1st12">Primeros 12 números</div>
+                    <div class="cell bet-dozen" data-bet="2nd12">Segundos 12 números</div>
+                    <div class="cell bet-dozen" data-bet="3rd12">Ultimos 12 números</div>
+                    <div class="cell bet-column" data-bet="col1">2 to 1 (Col 1)</div>
+                    <div class="cell bet-column" data-bet="col2">2 to 1 (Col 2)</div>
+                    <div class="cell bet-column" data-bet="col3">2 to 1 (Col 3)</div>
+                </div>
+                
+                <!-- Seccion para apuestas exteriores simples -->
+                <div class="simple-bets-group">
+                    <div class="cell bet-simple" data-bet="low">1-18</div>
+                    <div class="cell bet-simple" data-bet="high">19-36</div>
+                    <div class="cell bet-simple" data-bet="even">Par</div>
+                    <div class="cell bet-simple red" data-bet="red"></div> 
+                    <div class="cell bet-simple black" data-bet="black"></div> 
+                    <div class="cell bet-simple" data-bet="odd">Impar</div>         
+                </div>
+            </div>
+
             <div id="selected-numbers">Apuestas: <span id="numbers-list"></span></div>
         <br>
             <label>Valor de las fichas: </label>
@@ -66,5 +88,13 @@
                 </tr>
             {{/each}}
         </table>
+
+         <form id="resultado-form" action="add" method="post">
+            <input type="hidden" id="numeroGanador" name="numeroGanador">
+            <input type="hidden" id="colorGanador" name="colorGanador">
+            <input type="hidden" id="tipoApuesta" name="tipoApuesta">
+            <input type="hidden" id="saldoGanado" name="saldoGanado">
+        </form>
+    <script src="ruleta.js"></script>
     </body>
 </html>
