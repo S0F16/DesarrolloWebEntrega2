@@ -245,6 +245,7 @@ const variacion = ganancias - totalApostado;
     document.getElementById('tipoApuesta').value = tipoApuesta;
     document.getElementById('totalApostado').value = totalApostado;
     document.getElementById('saldoGanado').value = saldoGanado;
+    document.getElementById('variacion').value = variacion;
   }
 
 //reinicio despues de todos los calculos (despues de un giro)
@@ -260,4 +261,5 @@ function reinicio (){
 }
 }); //
 }})
+
 
