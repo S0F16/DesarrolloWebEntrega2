@@ -5,20 +5,6 @@
   <h2>Bienvenido {{username}} </h2> <br>
   <h3>Su saldo $ {{saldo}} </h3> <br>
   <h3 class="rr-subtitulo">Últimas 5 apuestas </h3> 
-        <table class="rr-tabla">
-            <tr>
-                <th>Números Apostados</th>
-                <th>Monto</th>
-                <th>Variación Saldo</th>
-            </tr>
-            {{#each ultimasApuestas}}
-                <tr>
-                    <td>{{this.numeros}}</td>
-                    <td>{{this.monto}}</td>
-                    <td>{{this.variacion}}</td>
-                </tr>
-            {{/each}}
-        </table>
-     <script src="ruleta.js"></script> <-- solo para la tabla -->
+       <--falta tabla ultimas transacciones, boton de eliminar cuenta y boton de cerrar sesion-->
   </body>
 </html>
