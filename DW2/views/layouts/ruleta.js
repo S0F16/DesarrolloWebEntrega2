@@ -82,7 +82,7 @@ spinBtn.addEventListener("click", () => {
     roulette.style.transform = "rotate(0deg)";
     resultNumberDiv.innerHTML = `Número ganador: <span style="color: ${colorGanador}; font-weight: bold;">${numeroGanador} </span>`
   calcularGanancias(numeroGanador, colorGanador);
-  setTimeout(reinicio, 20000); //reinicio despues de mostrar resultados, 15s
+  setTimeout(reinicio, 20000); //reinicio despues de mostrar resultados, 20s
   }, duracion);  
 });
 
@@ -185,7 +185,7 @@ bets.forEach((key) => {  //APUESTAS A NUMEROS
       if (key.startsWith('num-')) {
         const apuesta = parseInt(key.split('-')[1], 10);
         if (apuesta === numeroGanador) {
-          ganancias += valorFicha * 36; // Apuesta + 35:1
+          ganancias += valorFicha * 36; 
         }
       }
     });
@@ -196,7 +196,7 @@ bets.forEach((key) => {  //APUESTAS A NUMEROS
         let payout = 0;
         let matches = false;
 
-        // Apuestas simples (1:1)
+        // Apuestas simples 
         if (betType === 'red' && colorGanador === 'red') { payout = 1; matches = true; }
         else if (betType === 'black' && colorGanador === 'black') { payout = 1; matches = true; }
         else if (betType === 'even' && numeroGanador % 2 === 0 && numeroGanador !== 0) { payout = 1; matches = true; }
@@ -204,12 +204,12 @@ bets.forEach((key) => {  //APUESTAS A NUMEROS
         else if (betType === 'low' && numeroGanador >= 1 && numeroGanador <= 18) { payout = 1; matches = true; }
         else if (betType === 'high' && numeroGanador >= 19 && numeroGanador <= 36) { payout = 1; matches = true; }
 
-        // Docenas (2:1)
+        // Docenas
         else if (betType === '1st12' && numeroGanador >= 1 && numeroGanador <= 12) { payout = 2; matches = true; }
         else if (betType === '2nd12' && numeroGanador >= 13 && numeroGanador <= 24) { payout = 2; matches = true; }
         else if (betType === '3rd12' && numeroGanador >= 25 && numeroGanador <= 36) { payout = 2; matches = true; }
 
-        // Columnas (2:1) 
+        // Columnas  
         const col1Nums = [1,4,7,10,13,16,19,22,25,28,31,34];
         const col2Nums = [2,5,8,11,14,17,20,23,26,29,32,35];
         const col3Nums = [3,6,9,12,15,18,21,24,27,30,33,36];
@@ -261,5 +261,6 @@ function reinicio (){
 }
 }); //
 }})
+
 
 
