@@ -239,17 +239,11 @@ const variacion = ganancias - totalApostado;
     if (ultimasApuestas.length > 5) ultimasApuestas.pop();
   }
 
-async function guardarEnBD(numeroGanador, colorGanador, saldoGanado) {
-    const tipoApuesta = Array.from(bets).map(key => {
-      if (key.startsWith('num-')) return `Straight: ${key.split('-')[1]}`;
-      if (key.startsWith('bet-')) return `Exterior: ${key.split('-')[1]}`;
-      return key;
-    }).join(', ');
-
     // Popula el formulario (por si usas submit manual)
     document.getElementById('numeroGanador').value = numeroGanador;
     document.getElementById('colorGanador').value = colorGanador;
     document.getElementById('tipoApuesta').value = tipoApuesta;
+    document.getElementById('totalApostado').value = totalApostado;
     document.getElementById('saldoGanado').value = saldoGanado;
   }
 
@@ -266,3 +260,4 @@ function reinicio (){
 }
 }); //
 }})
+
