@@ -7,14 +7,23 @@
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
 </head>
+    
+<script>
+    if (password!==confirmPassword){
+    error.innerHTML='Error: las contraseñas son distintas';
+    }
+</script>
+    
 <body>
     <h2>registrate</h2>
     <form method="post" action='signUp'>
         Nombre: <input name="username"><br>
         Contraseña: <input type="password" name="password"><br>
         Confirme contraseña: <input type="password" name="confirmPassword"><br>
+        <h3 id= "error"></h3>
         <button type="submit">Crear usuario</button>
     </form>
 </body>
 </html>
+
 
