@@ -233,7 +233,7 @@ h3.rr-subtitulo {
 /* Tabla de apuestas */
 .table {
   display: grid;
-  grid-template-columns: 50px repeat(12, 1fr);
+  grid-template-columns: 50px repeat(13, 1fr); /*12*/
   grid-template-rows: repeat(3, 1fr);
   gap: 2px;
   background: #000;
